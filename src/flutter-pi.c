@@ -106,7 +106,10 @@ OPTIONS:\n\
                              pattern you use as a parameter so it isn't \n\
                              implicitly expanded by your shell.\n\
                              \n\
-  -h, --help                 Show this help and exit.\n\
+  -s, --screen \"width_pixel,height_pixel,width_mm,height_mm,refresh_rate,pixel_ratio\"\n\
+														 Override screen info from DRM\n\
+                             \n\
+	-h, --help                 Show this help and exit.\n\
 \n\
 EXAMPLES:\n\
   flutter-pi ~/hello_world_app\n\
@@ -1314,10 +1317,12 @@ static int init_display(void) {
 		fprintf(stderr, "[flutter-pi] Could not find a preferred output mode!\n");
 		return EINVAL;
 	}
-
-	flutterpi.display.width = mode->hdisplay;
-	flutterpi.display.height = mode->vdisplay;
-	flutterpi.display.refresh_rate = mode->vrefresh;
+	if(flutterpi.display.width == 0)
+		flutterpi.display.width = mode->hdisplay;
+	if(flutterpi.display.height == 0)
+		flutterpi.display.height = mode->vdisplay;
+	if(flutterpi.display.refresh_rate == 0)
+		flutterpi.display.refresh_rate = mode->vrefresh;
 
 	if ((flutterpi.display.width_mm == 0) || (flutterpi.display.height_mm == 0)) {
 		fprintf(
@@ -1325,16 +1330,18 @@ static int init_display(void) {
 			"[flutter-pi] WARNING: display didn't provide valid physical dimensions.\n"
 			"             The device-pixel ratio will default to 1.0, which may not be the fitting device-pixel ratio for your display.\n"
 		);
-		flutterpi.display.pixel_ratio = 1.0;
+		if(flutterpi.display.pixel_ratio == 0.0f)
+			flutterpi.display.pixel_ratio = 1.0;
 	} else {
-		flutterpi.display.pixel_ratio = (10.0 * flutterpi.display.width) / (flutterpi.display.width_mm * 38.0);
-		
-		int horizontal_dpi = (int) (flutterpi.display.width / (flutterpi.display.width_mm / 25.4));
-		int vertical_dpi = (int) (flutterpi.display.height / (flutterpi.display.height_mm / 25.4));
-
-		if (horizontal_dpi != vertical_dpi) {
-		        // See https://github.com/flutter/flutter/issues/71865 for current status of this issue.
-			fprintf(stderr, "[flutter-pi] WARNING: display has non-square pixels. Non-square-pixels are not supported by flutter.\n");
+		if(flutterpi.display.pixel_ratio == 0.0f)
+		{
+			flutterpi.display.pixel_ratio = (10.0 * flutterpi.display.width) / (flutterpi.display.width_mm * 38.0);
+			int horizontal_dpi = (int) (flutterpi.display.width / (flutterpi.display.width_mm / 25.4));
+			int vertical_dpi = (int) (flutterpi.display.height / (flutterpi.display.height_mm / 25.4));
+			if (horizontal_dpi != vertical_dpi) {
+							// See https://github.com/flutter/flutter/issues/71865 for current status of this issue.
+				fprintf(stderr, "[flutter-pi] WARNING: display has non-square pixels. Non-square-pixels are not supported by flutter.\n");
+			}
 		}
 	}
 	
@@ -2127,6 +2134,7 @@ static bool parse_cmd_args(int argc, char **argv) {
 		{"orientation", required_argument, NULL, 'o'},
 		{"rotation", required_argument, NULL, 'r'},
 		{"dimensions", required_argument, NULL, 'd'},
+		{"screen", required_argument, NULL, 's'},
 		{"help", no_argument, 0, 'h'},
 		{0, 0, 0, 0}
 	};
@@ -2196,6 +2204,24 @@ static bool parse_cmd_args(int argc, char **argv) {
 				flutterpi.display.width_mm = width_mm;
 				flutterpi.display.height_mm = height_mm;
 				
+				break;
+
+			case 's': ;
+				unsigned int width, height, refresh_rate;
+				double pixel_ratio;
+
+				ok = sscanf(optarg, "%u,%u,%u,%u,%u,%f", &width_mm, &height_mm, &width, &height, &refresh_rate, &pixel_ratio);
+				if ((ok == 0) || (ok == EOF)) {
+					fprintf(stderr, "ERROR: Invalid argument for --dimensions passed.\n%s", usage);
+					return false;
+				}
+
+				flutterpi.display.width_mm = width_mm;
+				flutterpi.display.height_mm = height_mm;
+				flutterpi.display.width = width;
+				flutterpi.display.height = height;
+				flutterpi.display.refresh_rate = refresh_rate;
+				flutterpi.display.pixel_ratio = pixel_ratio;
 				break;
 			
 			case 'h':
