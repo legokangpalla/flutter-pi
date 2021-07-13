@@ -106,7 +106,7 @@ OPTIONS:\n\
                              pattern you use as a parameter so it isn't \n\
                              implicitly expanded by your shell.\n\
                              \n\
-  -s, --screen \"width_pixel,height_pixel,width_mm,height_mm,refresh_rate,pixel_ratio\"\n\
+  -s, --screen \"width_mm,height_mm,width_pixel,height_pixel,refresh_rate,pixel_ratio\"\n\
 														 Override screen info from DRM\n\
                              \n\
 	-h, --help                 Show this help and exit.\n\
