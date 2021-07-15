@@ -582,7 +582,7 @@ static int on_mouse_motion_event(struct user_input *input, struct libinput_event
     input->cursor_x = new_cursor_x;
     input->cursor_y = new_cursor_y;
 
-    // transform the cursor pos to view (flutter) coordinates.
+    // transform the cursor pos to view  (flutter) coordinates.
     apply_flutter_transformation(input->display_to_view_transform, &new_cursor_x, &new_cursor_y);
 
     if (data->has_emitted_pointer_events == false) {

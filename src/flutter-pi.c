@@ -1181,6 +1181,113 @@ int flutterpi_fill_view_properties(
 		flutterpi.view.display_to_view_transform = FLUTTER_ROTZ_TRANSFORMATION(-270);
 		flutterpi.view.display_to_view_transform.transX = flutterpi.display.height;
 	}
+	//test display_to_view_transform
+
+
+	  /// horizontal scale factor
+  // flutterpi.view.display_to_view_transform.scaleX=0.25;
+  // flutterpi.view.display_to_view_transform.skewX=0.0;
+  // flutterpi.view.display_to_view_transform.transX=0.75;
+
+  // flutterpi.view.display_to_view_transform.skewY=0.0;
+  // flutterpi.view.display_to_view_transform.scaleY=0.125;
+  // flutterpi.view.display_to_view_transform.transY=0.0;
+
+	// flutterpi.view.display_to_view_transform.pers0=0.0;
+  // flutterpi.view.display_to_view_transform.pers1=0.0;
+  // flutterpi.view.display_to_view_transform.pers2=1.0;
+
+
+
+	// flutterpi.view.display_to_view_transform.scaleX=1.0;
+  // flutterpi.view.display_to_view_transform.skewX=0.0;
+  // flutterpi.view.display_to_view_transform.transX=0.0;
+
+  // flutterpi.view.display_to_view_transform.skewY=0.0;
+  // flutterpi.view.display_to_view_transform.scaleY=1.0;
+  // flutterpi.view.display_to_view_transform.transY=0.0;
+
+	// flutterpi.view.display_to_view_transform.pers0=0.0;
+	// flutterpi.view.display_to_view_transform.pers1=0.0;
+  // flutterpi.view.display_to_view_transform.pers2=1.0;
+
+
+	// flutterpi.view.display_to_view_transform.scaleX=0.0;
+  // flutterpi.view.display_to_view_transform.skewX=-1.0;
+  // flutterpi.view.display_to_view_transform.transX=0.0;
+
+  // flutterpi.view.display_to_view_transform.skewY=1.0;
+  // flutterpi.view.display_to_view_transform.scaleY=0.0;
+  // flutterpi.view.display_to_view_transform.transY=0.0;
+
+	// flutterpi.view.display_to_view_transform.pers0=0.0;
+	// flutterpi.view.display_to_view_transform.pers1=0.0;
+  // flutterpi.view.display_to_view_transform.pers2=1.0;
+
+	
+	// flutterpi.view.display_to_view_transform.scaleX=-1.0;
+  // flutterpi.view.display_to_view_transform.skewX=0.0;
+  // flutterpi.view.display_to_view_transform.transX=0.0;
+
+  // flutterpi.view.display_to_view_transform.skewY=0.0;
+  // flutterpi.view.display_to_view_transform.scaleY=-1.0;
+  // flutterpi.view.display_to_view_transform.transY=0.0;
+
+	// flutterpi.view.display_to_view_transform.pers0=0.0;
+	// flutterpi.view.display_to_view_transform.pers1=0.0;
+  // flutterpi.view.display_to_view_transform.pers2=1.0;
+
+	// flutterpi.view.display_to_view_transform.scaleX=0.0;
+  // flutterpi.view.display_to_view_transform.skewX=1.0;
+  // flutterpi.view.display_to_view_transform.transX=0.0;
+
+  // flutterpi.view.display_to_view_transform.skewY=1.0;
+  // flutterpi.view.display_to_view_transform.scaleY=0.0;
+  // flutterpi.view.display_to_view_transform.transY=0.0;
+
+	// flutterpi.view.display_to_view_transform.pers0=0.0;
+	// flutterpi.view.display_to_view_transform.pers1=0.0;
+  // flutterpi.view.display_to_view_transform.pers2=1.0;
+
+
+	// flutterpi.view.display_to_view_transform.scaleX=0.0;
+  // flutterpi.view.display_to_view_transform.skewX=-1.0;
+  // flutterpi.view.display_to_view_transform.transX=0.0;
+
+  // flutterpi.view.display_to_view_transform.skewY=1.0;
+  // flutterpi.view.display_to_view_transform.scaleY=0.0;
+  // flutterpi.view.display_to_view_transform.transY=0.0;
+
+	// flutterpi.view.display_to_view_transform.pers0=0.0;
+	// flutterpi.view.display_to_view_transform.pers1=0.0;
+  // flutterpi.view.display_to_view_transform.pers2=1.0;
+
+
+	// flutterpi.view.display_to_view_transform.scaleX=0.0;
+  // flutterpi.view.display_to_view_transform.skewX=-1.0;
+  // flutterpi.view.display_to_view_transform.transX=300.0;
+
+  // flutterpi.view.display_to_view_transform.skewY=1.0;
+  // flutterpi.view.display_to_view_transform.scaleY=0.0;
+  // flutterpi.view.display_to_view_transform.transY=-30.0;
+
+	// flutterpi.view.display_to_view_transform.pers0=0.0;
+	// flutterpi.view.display_to_view_transform.pers1=0.0;
+  // flutterpi.view.display_to_view_transform.pers2=1.0;
+
+
+	flutterpi.view.display_to_view_transform.scaleX=0.0;
+  flutterpi.view.display_to_view_transform.skewX=-1.71;
+  flutterpi.view.display_to_view_transform.transX=513.0;
+
+  flutterpi.view.display_to_view_transform.skewY=0.76;
+  flutterpi.view.display_to_view_transform.scaleY=0.0;
+  flutterpi.view.display_to_view_transform.transY=-22.8;
+
+	flutterpi.view.display_to_view_transform.pers0=0.0;
+	flutterpi.view.display_to_view_transform.pers1=0.0;
+  flutterpi.view.display_to_view_transform.pers2=1.0;
+
 
 	if (flutterpi.user_input != NULL) {
 		// update the user input with the new transforms
@@ -2142,7 +2249,7 @@ static bool parse_cmd_args(int argc, char **argv) {
 	bool finished_parsing_options = false;
 	while (!finished_parsing_options) {
 		longopt_index = 0;
-		opt = getopt_long(argc, argv, "+i:o:r:d:h", long_options, &longopt_index);
+		opt = getopt_long(argc, argv, "+i:o:r:d:s:h", long_options, &longopt_index);
 
 		switch (opt) {
 			case 0:
@@ -2208,20 +2315,21 @@ static bool parse_cmd_args(int argc, char **argv) {
 
 			case 's': ;
 				unsigned int width, height, refresh_rate;
-				double pixel_ratio;
+				float pixel_ratio;
 
 				ok = sscanf(optarg, "%u,%u,%u,%u,%u,%f", &width_mm, &height_mm, &width, &height, &refresh_rate, &pixel_ratio);
 				if ((ok == 0) || (ok == EOF)) {
-					fprintf(stderr, "ERROR: Invalid argument for --dimensions passed.\n%s", usage);
+					fprintf(stderr, "ERROR: Invalid argument for --screen passed.\n%s", usage);
 					return false;
 				}
+				printf("float passed: %f", pixel_ratio);
 
 				flutterpi.display.width_mm = width_mm;
 				flutterpi.display.height_mm = height_mm;
 				flutterpi.display.width = width;
 				flutterpi.display.height = height;
 				flutterpi.display.refresh_rate = refresh_rate;
-				flutterpi.display.pixel_ratio = pixel_ratio;
+				flutterpi.display.pixel_ratio = (double)pixel_ratio;
 				break;
 			
 			case 'h':
